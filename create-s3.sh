@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 # This Script will create S3 bucket and tag the bucket with appropriate name.
 
 # To check if access key is setup in your system 
