@@ -19,11 +19,11 @@ export PATH=$PATH:/usr/local/bin
 
 velero install \
     --provider aws \
-    --plugins velero/velero-plugin-for-aws:v1.0.1 \
+    --plugins velero/velero-plugin-for-aws:v1.4.0 \
     --bucket velero-backup-rightdata \
     --backup-location-config region=us-east-1 \
     --snapshot-location-config region=us-east-1 \
-    --secret-file /velero-credentials
+    --secret-file /tmp/velero-eks/velero-credentials
 
 
 

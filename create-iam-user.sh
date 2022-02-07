@@ -1,7 +1,7 @@
 
 #!/bin/bash
  
-
+accountId=157557265942
 # To check if access key is setup in your system 
 
 if ! grep -q aws_access_key_id ~/.aws/config; then      # grep -q  Turns off Writing to standard output
@@ -26,8 +26,14 @@ aws iam create-user --user-name "${username}" --output json
 credentials=$(aws iam create-access-key --user-name "${username}" --query 'AccessKey.[AccessKeyId,SecretAccessKey]'  --output text)
 
 
+aws iam create-group --group-name Velero-Admin
 
-aws iam create-policy -policy-name velero-iam-policy -policy-document /velero-iam-policy.json -profile production
+aws iam add-user-to-group --user-name "${username}" --group-name Velero-Admin
+
+aws iam create-policy -policy-name velero-iam-policy -policy-document /tmp/velero-eks/velero-iam-policy.json
+
+aws iam attach-group-policy --group-name Velero-Admin --policy-arn arn:aws:iam::${accountId}:policy/velero-backup
+
 
 
 # cut command formats the output with correct coloumn.
