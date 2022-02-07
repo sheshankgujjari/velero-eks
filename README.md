@@ -6,7 +6,7 @@ Velero backup installation
 
 1. Create S3 bucket by executing ./create-s3.sh file. It will ask you to enter the s3 bucket information (Versioning is not enabled it is plain vanilla s3 bucket)
 
-2. Create IAM user, group and policy by executing create-iam-user.sh. For now hardcoded accountId and it will prompt for iam username.
+2. Create IAM user, group and policy(change the bucket name on the policy) by executing create-iam-user.sh. For now hardcoded accountId and it will prompt for iam username.
 
 3. The above script will output the credentials, add the IAM user credentials in the "velero-credentials" file of this repo on your local
 
