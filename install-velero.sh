@@ -2,12 +2,12 @@
 
 cd /tmp
 
-wget https://github.com/vmware-tanzu/velero/releases/download/v1.3.2/velero-v1.3.2-linux-amd64.tar.gz
+wget https://github.com/vmware-tanzu/velero/releases/download/v1.8.0-rc.1/velero-v1.8.0-rc.1-linux-amd64.tar.gz
 
 
-tar -xvf velero-v1.3.2-linux-amd64.tar.gz -C /tmp
+tar -xvf velero-v1.8.0-rc.1-linux-amd64.tar.gz -C /tmp
 
-sudo mv /tmp/velero-v1.3.2-linux-amd64/velero /usr/local/bin
+sudo mv /tmp/velero-v1.8.0-rc.1-linux-amd64/velero /usr/local/bin
 
 
 velero version
@@ -23,7 +23,7 @@ velero install \
     --bucket velero-backup-rightdata \
     --backup-location-config region=us-east-1 \
     --snapshot-location-config region=us-east-1 \
-    --secret-file /root/.aws/credentials
+    --secret-file /velero-credentials
 
 
 
