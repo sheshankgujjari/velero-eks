@@ -20,7 +20,7 @@ read -r -p  "Enter the name of the bucket:" bucketname
 
 function createbucket()
    {
-    aws s3api  create-bucket --bucket $bucketname --region us-east-2
+    aws s3api  create-bucket --bucket $bucketname --region us-east-1
    }
 
 
